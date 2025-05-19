@@ -1,0 +1,19 @@
+Test Event 3:New York Culinary Workshop
+
+Event Title:
+ TasteMakers: NYC Culinary Masterclass
+
+Description:
+ Elevate your cooking skills with hands-on workshops by NYC's top chefs.
+
+Full Description:
+ Join TasteMakers, the NYC Culinary Masterclass, for an unforgettable gastronomic journey. Learn from celebrated chefs in interactive sessions covering everything from gourmet techniques to international cuisines. Perfect for food lovers of all skill levels looking to refine their palate and culinary expertise.
+
+Bullet Point 1:
+ Hands-on cooking classes led by renowned New York City chefs.
+
+Bullet Point 2:
+ Focus on diverse culinary themes, from pastry to savory dishes.
+
+Bullet Point 3:
+ Includes ingredient sourcing tips and wine pairing suggestions.

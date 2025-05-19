@@ -1,0 +1,53 @@
+/* components/TeamEventsTable/TeamEventsTable.module.css */
+
+.teamEventsSection {
+  margin-top: var(--space-xl);
+  padding: var(--space-l);
+  background-color: var(--color-background-secondary);
+  border-radius: var(--border-radius-medium);
+  box-shadow: var(--shadow-small);
+}
+
+.sectionTitle {
+  font-size: var(--font-size-large);
+  margin-bottom: var(--space-m);
+  color: var(--color-text-primary);
+}
+
+.tableContainer {
+  overflow-x: auto;
+}
+
+.teamEventsTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--font-size-small);
+}
+
+.teamEventsTable th,
+.teamEventsTable td {
+  padding: var(--space-s) var(--space-m);
+  text-align: left;
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+
+.teamEventsTable th {
+  background-color: var(--color-background-tertiary);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-secondary);
+}
+
+.teamEventsTable td a {
+  color: var(--color-link);
+  text-decoration: none;
+}
+
+.teamEventsTable td a:hover {
+  text-decoration: underline;
+}
+
+.noEventsMessage {
+  font-style: italic;
+  color: var(--color-text-secondary);
+  padding: var(--space-m) 0;
+}

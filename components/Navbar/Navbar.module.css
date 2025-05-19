@@ -1,0 +1,531 @@
+/* components/Navbar/Navbar.module.css */
+
+.navbar {
+  background-color: var(--background-secondary);
+  color: var(--text-primary);
+  transform: translateY(0);
+  transition: transform 0.5s ease-in-out, background-color 0.3s ease,
+    color 0.3s ease;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+}
+
+.navbarHidden {
+  transform: translateY(-100%);
+}
+
+.navbarInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0.8rem 1rem;
+  position: relative;
+  gap: 1rem;
+}
+
+.navLinkStatic {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.5rem 0.8rem;
+  color: var(--text-secondary);
+}
+.left {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.5rem;
+  text-decoration: none !important;
+  color: var(--accent-primary);
+  letter-spacing: 0.5px;
+  transition: transform 0.2s ease;
+  display: block;
+}
+
+.logo:hover {
+  transform: scale(1.03);
+  color: var(--accent-primary);
+}
+
+.desktopNav,
+.desktopNavLinks,
+.center,
+.desktopActions {
+  display: none;
+}
+.navLinkIcon {
+  margin-right: 0.3rem;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 0.2rem;
+}
+
+.mobileMenuButton {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  display: block;
+  z-index: 104;
+  position: relative;
+  line-height: 1;
+  transition: opacity 0.2s ease, visibility 0.2s ease, color 0.2s ease;
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobileMenuButton:hover {
+  color: var(--accent-primary);
+}
+
+.mobileMenuOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 101;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.mobileMenuContent {
+  background-color: var(--background-primary);
+  width: 80%;
+  max-width: 350px;
+  height: 100%;
+  padding: 1rem;
+  box-shadow: -2px 0 5px var(--shadow-color, rgba(0, 0, 0, 0.2));
+  padding-top: 5rem;
+  overflow-y: auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  z-index: 102;
+}
+
+.mobileMenuCloseButton {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 1.8rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  z-index: 103;
+  line-height: 1;
+  transition: color 0.2s ease;
+}
+
+.mobileMenuCloseButton:hover {
+  color: var(--accent-primary);
+}
+
+.mobileSearchContainer {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  border: 1px solid var(--border-color-stronger, #cccccc);
+  border-radius: 20px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.searchInput {
+  flex-grow: 1;
+  padding: 0.6rem 1rem;
+  border: none;
+  background-color: transparent;
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  outline: none;
+  min-width: 50px;
+}
+.searchInput::placeholder {
+  color: var(--text-secondary-light, #888888);
+}
+.searchButton {
+  background-color: transparent;
+  border: none;
+  padding: 0 1rem;
+  cursor: pointer;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  font-size: 1.1rem;
+  transition: color 0.2s ease;
+  flex-shrink: 0;
+}
+.searchButton:hover {
+  color: var(--accent-primary);
+}
+
+.mobileNavSection {
+  padding-top: 1rem;
+}
+
+.mobileNavHeading {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  margin-bottom: 0.8rem;
+  padding-left: 0.5rem;
+}
+
+.mobileNavCollapsibleHeading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0.6rem 0.5rem;
+  font-size: 1rem;
+  color: var(--text-secondary);
+  background-color: transparent;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  border-radius: 4px;
+}
+
+.mobileNavCollapsibleHeading:hover {
+  background-color: var(--background-secondary);
+  color: var(--accent-primary);
+}
+
+.mobileNavChevron {
+  transition: transform 0.2s ease-in-out;
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+}
+
+.mobileNavCollapsibleHeading:hover .mobileNavChevron {
+  color: var(--accent-primary);
+}
+
+.mobileNavChevron.chevronOpen {
+  transform: rotate(90deg);
+}
+
+.mobileNavLink {
+  display: block;
+  padding: 0.6rem 0.5rem;
+  color: var(--text-secondary);
+  text-decoration: none !important;
+  font-size: 1rem;
+  border-radius: 4px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.mobileNavLink:hover,
+.mobileNavLink:focus {
+  background-color: var(--background-secondary);
+  color: var(--accent-primary);
+}
+
+.mobileNavSubList {
+  padding-left: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.mobileActionButtons {
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.actionButton {
+  background-color: transparent;
+  border: 1px solid transparent;
+  cursor: pointer;
+  color: var(--text-secondary);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.9rem;
+  border-radius: 4px;
+  transition: color 0.2s ease;
+  text-decoration: none !important;
+  height: 36px;
+  padding: 0 0.8rem;
+}
+.actionButton:hover {
+  color: var(--accent-primary);
+}
+.actionButton svg {
+  font-size: 1.2rem;
+}
+
+.iconButtonOnly {
+  background-color: transparent;
+  border: none;
+  margin: 0;
+  cursor: pointer;
+  color: var(--text-secondary);
+  line-height: 1;
+  border-radius: 50%;
+  transition: color 0.2s ease;
+  text-decoration: none !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+}
+.iconButtonOnly svg {
+  font-size: 1.2rem;
+}
+.iconButtonOnly:hover {
+  color: var(--accent-primary);
+}
+
+:global(body.mobile-menu-is-open) .mobileMenuButton {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.dropdownContainer {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: calc(100% + 5px);
+  right: 0;
+  background-color: var(--background-primary, #fff);
+  border: 1px solid var(--border-color, #ddd);
+  border-radius: 6px;
+  box-shadow: 0 3px 10px var(--shadow-color);
+  padding: 0.5rem 0;
+  min-width: 180px;
+  z-index: 110;
+  list-style: none;
+  margin: 0;
+}
+
+.dropdownItem {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 1rem;
+  color: var(--text-primary, #333);
+  text-decoration: none !important;
+  white-space: nowrap;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: color 0.15s ease, background-color 0.15s ease;
+  width: 100%;
+  background: none;
+  border: none;
+  text-align: left;
+}
+
+.dropdownItemText {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.dropdownItem:hover {
+  color: var(--accent-primary, #da727e);
+  background-color: var(--background-secondary);
+}
+
+.dropdownItem.active {
+  color: var(--accent-primary);
+  font-weight: 600;
+  background-color: var(--background-secondary-accent, #f0e4e6);
+}
+
+.dropdownItem svg {
+  margin-right: 0.5rem;
+  vertical-align: middle;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.dropdownUserImage {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 1px solid var(--border-color-lighter);
+  margin-right: 0.5rem;
+}
+
+.userProfileButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: transparent;
+  border: none;
+  padding: 0.3rem 0.6rem;
+  border-radius: var(--border-radius-medium);
+  cursor: pointer;
+  color: var(--text-secondary);
+  transition: color 0.2s ease;
+}
+
+.userProfileButton:hover {
+  color: var(--accent-primary);
+}
+
+.navbarUserImage {
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--border-color);
+}
+
+.navbarUserIconFallback {
+  color: var(--text-secondary);
+}
+
+.navbarUserName {
+  font-weight: 500;
+  font-size: 0.9rem;
+  max-width: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.chevronIcon {
+  transition: transform 0.2s ease-in-out;
+  color: var(--text-secondary);
+}
+
+.chevronOpen {
+  transform: rotate(180deg);
+}
+
+@media (max-width: 767.98px) {
+  .mobileMenuContent {
+    width: 100%;
+    max-width: none;
+    border-radius: 0;
+    box-shadow: none;
+  }
+}
+
+@media (min-width: 1200px) {
+  .navbarInner {
+    padding: 0.8rem 2rem;
+    gap: 2rem;
+  }
+
+  .logo {
+    font-size: 1.7rem;
+  }
+
+  .desktopNav {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-shrink: 0;
+  }
+  .center {
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    min-width: 0;
+  }
+  .desktopNavLinks {
+    display: flex;
+    gap: 0.5rem;
+  }
+  .desktopActions {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+  .searchContainer {
+    display: flex;
+    align-items: center;
+    max-width: 600px;
+    width: 100%;
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    background-color: var(--background-primary);
+    overflow: hidden;
+  }
+
+  .mobileMenuButton {
+    display: none;
+  }
+  .mobileMenuOverlay {
+    display: none;
+  }
+
+  .left {
+    display: flex;
+    align-items: center;
+    flex-shrink: 1;
+    min-width: 0;
+    max-width: none;
+    gap: 1rem;
+  }
+  .right {
+    gap: 0.8rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .navbarInner {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+.desktopNavLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0 0.8rem;
+  height: 36px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  font-size: 0.9rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.desktopNavLink:hover,
+.desktopNavLink:focus {
+  background-color: var(--background-secondary);
+  color: var(--accent-primary);
+  text-decoration: none;
+}

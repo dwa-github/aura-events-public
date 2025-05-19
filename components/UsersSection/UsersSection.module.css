@@ -1,0 +1,95 @@
+/* components/UsersSection/UsersSection.module.css */
+
+.usersSection {
+  width: 100%;
+  max-width: 100%;
+  padding: 1rem 0.5rem;
+  margin-bottom: var(--spacing-large, 1.5rem);
+  box-sizing: border-box;
+  background-color: var(--background-secondary);
+  border-radius: 0;
+}
+
+.sectionTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-title);
+  margin-bottom: var(--spacing-small, 0.5rem);
+  text-align: center;
+  max-width: 60ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.sectionDescription {
+  font-size: var(--font-size-small);
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-medium, 1.5rem);
+  text-align: center;
+  max-width: 60ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.usersGrid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.errorMessage {
+  color: var(--color-error, red);
+  text-align: center;
+  margin-bottom: var(--spacing-medium);
+}
+
+@media (min-width: 480px) {
+  .usersGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    justify-content: center;
+    gap: 0.25rem;
+  }
+}
+
+@media (min-width: 576px) {
+  .usersGrid {
+    gap: 1.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .usersSection {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1.5rem 1rem;
+    border-radius: 1rem;
+  }
+  .sectionTitle {
+    font-size: 2rem;
+  }
+  .sectionDescription {
+    font-size: var(--font-size-medium);
+  }
+  .usersGrid {
+    gap: 1.75rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .usersSection {
+    padding: 2rem 1.25rem;
+  }
+  .usersGrid {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 220px));
+    gap: 2rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .usersSection {
+    padding: 2.5rem 1.5rem;
+  }
+}

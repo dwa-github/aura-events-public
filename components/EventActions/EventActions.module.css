@@ -1,0 +1,133 @@
+/* components/EventActions/EventActions.module.css */
+.actionButton {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs, 0.5rem);
+  padding-top: var(--spacing-xs, 0.5rem);
+  padding-bottom: var(--spacing-xs, 0.5rem);
+  padding-left: 0;
+  padding-right: 0;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  background-color: transparent;
+  border: none;
+  border-radius: var(--border-radius-medium);
+  cursor: pointer;
+  transition: color 0.2s ease;
+  text-decoration: none;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  font-family: inherit;
+}
+
+.actionButton:hover {
+  color: var(--accent-primary);
+}
+
+.icon {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.modalBackdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1050;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.modalContent {
+  background-color: var(--card-background);
+  padding: var(--spacing-large, 2rem);
+  border-radius: var(--border-radius-large, 1rem);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 360px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-medium, 1.5rem);
+}
+
+.modalTitle {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  text-align: center;
+}
+
+.shareOptionButton {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-small, 0.75rem);
+  padding: var(--spacing-s, 0.75rem) var(--spacing-m, 1rem);
+  border: 1px solid var(--border-color-lighter);
+  border-radius: var(--border-radius-medium);
+  background-color: var(--background-primary);
+  color: var(--text-primary);
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  width: 100%;
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+.shareOptionButton:hover {
+  background-color: var(--background-hover);
+  color: var(--accent-primary);
+}
+
+.shareOptionButton .icon {
+  width: 1.125rem;
+  height: 1.125rem;
+  color: var(--text-secondary);
+}
+.shareOptionButton:hover .icon {
+  color: var(--accent-primary);
+}
+
+.cancelButton {
+  margin-top: var(--spacing-xs);
+  background-color: transparent;
+  border-color: transparent;
+  color: var(--text-secondary);
+  text-align: center;
+  justify-content: center;
+  font-weight: normal;
+}
+.cancelButton:hover {
+  background-color: var(--background-hover-subtle, var(--background-hover));
+  color: var(--accent-primary);
+}
+
+@media (max-width: 600px) {
+  .modalContent {
+    width: 100%;
+    max-width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: var(--border-radius-xl, 1.5rem)
+      var(--border-radius-xl, 1.5rem) 0 0;
+    padding-bottom: calc(
+      var(--spacing-large, 2rem) + env(safe-area-inset-bottom)
+    );
+    gap: var(--spacing-s);
+  }
+  .modalTitle {
+    font-size: 1.1rem;
+    margin-bottom: var(--spacing-xs);
+  }
+}

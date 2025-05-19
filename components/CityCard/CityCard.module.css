@@ -1,0 +1,90 @@
+/* components/CityCard/CityCard.module.css */
+
+.cardLink {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  position: relative;
+}
+
+.cardLink:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.card {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  overflow: hidden;
+  background-color: var(--background-secondary);
+  border-radius: inherit;
+}
+
+.cardImage {
+  z-index: 0;
+  transition: transform 0.4s ease;
+}
+
+.cardLink:hover .cardImage {
+  transform: scale(1.05);
+}
+
+.gradientOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.75) 0%,
+    rgba(0, 0, 0, 0.3) 35%,
+    rgba(0, 0, 0, 0) 70%
+  );
+  z-index: 1;
+  border-radius: inherit;
+  transition: background 0.3s ease;
+}
+
+.content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  padding: 1rem 1.2rem;
+  color: #ffffff;
+}
+
+.cityName {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0 0 0.3rem 0;
+  line-height: 1.3;
+}
+
+.cityDescription {
+  font-size: 0.85rem;
+  margin: 0;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.9);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media (max-width: 640px) {
+  .cityName {
+    font-size: 1.1rem;
+  }
+  .cityDescription {
+    font-size: 0.8rem;
+  }
+  .content {
+    padding: 0.8rem 1rem;
+  }
+}

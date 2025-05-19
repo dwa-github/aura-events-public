@@ -1,0 +1,216 @@
+/* components/EventBooking/EventBooking.module.css */
+.modalBackdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1050;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.2s ease-in-out;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.modalContent {
+  background-color: var(--card-background);
+  padding: var(--spacing-large, 2rem);
+  border-radius: var(--border-radius-large, 1rem);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 380px;
+  min-height: 100px;
+  color: var(--text-primary);
+  opacity: 1;
+  visibility: visible;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-medium, 1.5rem);
+}
+
+.modalTitle {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  text-align: center;
+}
+
+.quantitySelector {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-s, 0.75rem);
+  align-self: center;
+}
+
+.quantityButton {
+  background-color: var(--background-secondary, #f8f4f0);
+  border: 1px solid var(--border-color, #d1d5db);
+  border-radius: var(--border-radius-pill, 50%);
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--text-secondary);
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.quantityButton:hover:not(:disabled) {
+  background-color: var(--background-hover, #e5e7eb);
+  border-color: var(--border-color-dark, #9ca3af);
+}
+
+.quantityButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.quantityDisplay {
+  font-weight: 600;
+  min-width: 24px;
+  text-align: center;
+  font-size: 1rem;
+  color: var(--text-primary);
+}
+
+.availabilityInfo,
+.soldOutMessage {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin: 0;
+  text-align: center;
+}
+
+.soldOutMessage {
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.confirmButton {
+  padding: var(--spacing-s, 0.75rem) var(--spacing-l, 2rem);
+  border-radius: var(--border-radius-pill, 9999px);
+  font-weight: 500;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease, opacity 0.2s ease;
+  border: 1px solid transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-xs, 0.5rem);
+  text-decoration: none;
+  line-height: 1.5;
+  background-color: var(--accent-primary);
+  color: var(--button-text-color, #ffffff);
+  width: 100%;
+}
+
+.confirmButton:hover:not(:disabled) {
+  background-color: var(--accent-primary-dark, var(--accent-primary));
+}
+
+.confirmButton:disabled {
+  background-color: var(--color-grey-light, #cccccc);
+  color: var(--color-grey-dark, #777777);
+  cursor: not-allowed;
+}
+
+.cancelButton {
+  padding: var(--spacing-xs, 0.5rem) var(--spacing-m, 1rem);
+  border-radius: var(--border-radius-medium);
+  font-weight: 500;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  border: 1px solid transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-xs, 0.5rem);
+  text-decoration: none;
+  line-height: 1.5;
+  background-color: transparent;
+  color: var(--text-secondary);
+  align-self: center;
+  margin-top: 0;
+}
+
+.cancelButton:hover {
+  background-color: var(--background-hover-subtle, var(--background-hover));
+  color: var(--accent-primary);
+}
+
+.message {
+  font-weight: 500;
+  font-size: 0.9rem;
+  padding: var(--spacing-xs, 0.5rem) var(--spacing-s, 0.75rem);
+  border-radius: var(--border-radius-soft, 4px);
+  text-align: center;
+  margin: 0;
+}
+
+.successMessage {
+  background-color: var(--accent-secondary-light, var(--background-secondary));
+  color: var(--accent-secondary-dark, var(--text-primary));
+  border: 1px solid var(--accent-secondary, var(--border-color));
+}
+
+.errorMessage {
+  background-color: var(
+    --accent-primary-extra-light,
+    var(--background-secondary)
+  );
+  color: var(--accent-primary-dark, var(--text-primary));
+  border: 1px solid var(--accent-primary, var(--border-color));
+}
+
+.closeButtonAfterConfirm {
+  padding: var(--spacing-s, 0.75rem) var(--spacing-l, 2rem);
+  border-radius: var(--border-radius-pill, 9999px);
+  font-weight: 500;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  border: 1px solid transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-xs, 0.5rem);
+  text-decoration: none;
+  line-height: 1.5;
+  background-color: var(--accent-primary);
+  color: var(--button-text-color, #ffffff);
+  width: 100%;
+}
+
+.closeButtonAfterConfirm:hover {
+  background-color: var(--accent-primary-dark, var(--accent-primary));
+}
+
+@media (max-width: 575px) {
+  .modalContent {
+    width: 100%;
+    max-width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: var(--border-radius-xl, 1.5rem)
+      var(--border-radius-xl, 1.5rem) 0 0;
+    padding-bottom: calc(
+      var(--spacing-large, 2rem) + env(safe-area-inset-bottom)
+    );
+    gap: var(--spacing-medium, 1.5rem);
+  }
+  .modalTitle {
+    font-size: 1.1rem;
+    margin-bottom: var(--spacing-xs);
+  }
+}

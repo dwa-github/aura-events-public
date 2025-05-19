@@ -1,0 +1,18 @@
+/* app/dashboard/[userSlug]/page.module.css */
+
+.dashboardContainer {
+  padding-bottom: 1.5rem;
+}
+
+.contentSection {
+  padding: 0 1rem;
+  max-width: 1200px;
+  margin: 0 auto 1.5rem auto;
+}
+
+.sectionTitle {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: var(--text-primary, #212529);
+}

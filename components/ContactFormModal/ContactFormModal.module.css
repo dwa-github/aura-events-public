@@ -1,0 +1,75 @@
+/* /components/ContactFormModal/ContactFormModal.module.css */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-m, 1rem);
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs, 0.25rem);
+}
+
+.label {
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: var(--text-secondary, #555555);
+}
+
+.requiredIndicator {
+  color: var(--error-color);
+  margin-left: var(--spacing-xxs, 0.125rem);
+}
+
+.input,
+.textarea {
+  padding: var(--spacing-s, 0.75rem);
+  border: 1px solid var(--border-color, #ced4da);
+  border-radius: var(--border-radius-medium, 6px);
+  font-size: 1rem;
+  background-color: var(
+    --input-background,
+    var(--background-secondary, #ffffff)
+  );
+  color: var(--text-primary, #212529);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.input:focus,
+.textarea:focus {
+  outline: none;
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 2px var(--accent-primary-transparent);
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 100px;
+  font-family: inherit;
+}
+
+.inputError,
+.textarea.inputError {
+  border-color: var(--error-color);
+}
+
+.inputError:focus,
+.textarea.inputError:focus {
+  box-shadow: 0 0 0 2px var(--error-color-transparent);
+}
+
+.errorMessage {
+  color: var(--error-color);
+  font-size: 0.8rem;
+  margin-top: var(--spacing-xxs, 0.25rem);
+}
+
+.formActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--spacing-s, 0.75rem);
+  margin-top: var(--spacing-m, 1rem);
+}

@@ -1,0 +1,223 @@
+/* app/events/[eventSlug]/page.module.css */
+
+.detailsSection {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: var(--spacing-xl, 3rem);
+  padding: 0.5rem;
+  background-color: var(--background-secondary);
+  border-radius: var(--border-radius-large, 1rem);
+  box-sizing: border-box;
+}
+
+.detailsContentWrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-medium, 1.5rem);
+}
+
+.mainContentCard,
+.sidebarCard {
+  background-color: var(--card-background);
+  padding: var(--spacing-medium, 1.5rem);
+  border-radius: var(--border-radius-medium, 0.5rem);
+  box-shadow: 0 2px 8px var(--shadow-color);
+}
+
+.mainContentCard {
+  order: 1;
+}
+
+.mainContent h2,
+.sectionTitle {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: var(--spacing-medium);
+  color: var(--text-primary);
+}
+
+.fullDescription {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.fullDescription p,
+.fullDescription ul,
+.fullDescription ol {
+  margin-bottom: var(--spacing-small);
+}
+
+.fullDescription ul,
+.fullDescription ol {
+  padding-left: var(--spacing-large, 2rem);
+}
+
+.fullDescription li {
+  margin-bottom: var(--spacing-xxs);
+}
+
+.fullDescription a {
+  color: var(--accent-primary);
+  text-decoration: underline;
+}
+.fullDescription a:hover {
+  text-decoration: none;
+}
+
+.bulletPointsSection {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-color-light);
+}
+
+.subSectionTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: var(--text-color-primary);
+}
+
+.bulletList {
+  list-style: disc;
+  padding-left: 1.5rem;
+  margin-top: 0.5rem;
+  color: var(--text-color-secondary);
+}
+
+.bulletList li {
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+}
+
+.sidebarCard {
+  display: flex;
+  flex-direction: column;
+  order: 2;
+}
+.sidebarContent h3,
+.sidebarTitle {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: var(--spacing-small);
+  color: var(--text-primary);
+}
+
+.eventMeta p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-xs);
+  line-height: 1.6;
+  display: flex;
+  align-items: baseline;
+}
+
+.eventMeta strong {
+  font-weight: 600;
+  color: var(--text-primary);
+  width: 100px;
+  margin-right: var(--spacing-small, 0.75rem);
+  flex-shrink: 0;
+  text-align: left;
+}
+
+.eventMeta a {
+  color: var(--accent-primary);
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+.eventMeta a:hover {
+  color: var(--accent-primary);
+  text-decoration: none;
+}
+
+.interactiveElementsContainer {
+  margin-top: auto;
+  padding-top: var(--spacing-large, 2rem);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-small, 0.75rem);
+  justify-content: flex-start;
+}
+
+.iconButton,
+.routeButton {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs, 0.5rem);
+  padding-top: var(--spacing-xs, 0.5rem);
+  padding-bottom: var(--spacing-xs, 0.5rem);
+  padding-left: 0;
+  padding-right: 0;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  background-color: transparent;
+  border: none;
+  border-radius: var(--border-radius-medium);
+  cursor: pointer;
+  transition: color 0.2s ease;
+  text-decoration: none;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  font-family: inherit;
+}
+
+.iconButton:hover,
+.routeButton:hover {
+  color: var(--accent-primary);
+  text-decoration: none;
+}
+
+@media (min-width: 768px) {
+  .detailsSection {
+    padding: 1rem;
+  }
+  .detailsContentWrapper {
+    gap: var(--spacing-large, 2rem);
+  }
+  .mainContentCard,
+  .sidebarCard {
+    padding: var(--spacing-large, 2rem);
+  }
+
+  .interactiveElementsContainer {
+    padding-top: var(--spacing-xl, 3rem);
+  }
+  .sectionTitle {
+    font-size: 2rem;
+  }
+  .sidebarTitle {
+    font-size: 1.4rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .detailsSection {
+    padding: 1.2rem;
+  }
+  .detailsContentWrapper {
+    grid-template-columns: 1fr calc(260px + (2 * var(--spacing-large, 2rem)));
+  }
+  .mainContentCard {
+    order: 1;
+  }
+  .sidebarCard {
+    order: 2;
+  }
+}
+
+@media (min-width: 1200px) {
+  .detailsSection {
+    padding: 1.5rem;
+  }
+  .sectionTitle {
+    font-size: 2.2rem;
+  }
+  .sidebarTitle {
+    font-size: 1.5rem;
+  }
+}

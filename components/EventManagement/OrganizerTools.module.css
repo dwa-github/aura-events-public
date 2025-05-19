@@ -1,0 +1,114 @@
+/* components/EventManagement/OrganizerTools.module.css */
+.organizerToolsWrapper {
+  width: 100%;
+  max-width: var(--max-content-width, 1200px);
+  margin: var(--spacing-xl, 3rem) auto;
+}
+
+.organizerToolsCard {
+  background-color: var(--background-secondary, #f0f4f8);
+  padding: 0.5rem;
+  border-radius: var(--border-radius-large, 1rem);
+  margin-top: var(--spacing-xl, 3rem);
+}
+
+.cardTitle {
+  font-size: var(--font-size-xl, 1.8rem);
+  color: var(--text-primary);
+  margin-top: 0;
+  margin-bottom: var(--spacing-large, 2rem);
+  text-align: left;
+}
+
+.contentLayoutGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-xl, 3rem);
+}
+
+.detailsSection,
+.actionsSection {
+  background-color: var(--card-background, #ffffff);
+  padding: var(--spacing-medium, 1.5rem);
+  border-radius: var(--border-radius-medium, 0.5rem);
+  box-shadow: var(--shadow-medium, 0 4px 12px rgba(0, 0, 0, 0.1));
+  display: flex;
+  flex-direction: column;
+}
+
+.sectionSubtitle {
+  font-size: var(--font-size-large, 1.5rem);
+  color: var(--text-primary);
+  margin-top: 0;
+  margin-bottom: var(--spacing-medium, 1.5rem);
+}
+
+.sectionDescription {
+  font-size: var(--font-size-sm, 0.9rem);
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-large, 2rem);
+  line-height: 1.6;
+  flex-grow: 1;
+}
+
+.detailsItemsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-small, 0.75rem);
+}
+
+.detailItem {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-s, 0.5rem);
+  font-size: var(--font-size-base, 1rem);
+  color: var(--text-secondary);
+}
+.detailItem strong {
+  color: var(--text-primary);
+  font-weight: 500;
+  margin-right: var(--spacing-xs, 0.25rem);
+}
+
+.detailIcon {
+  color: var(--accent-primary);
+  flex-shrink: 0;
+}
+
+.actionButtonsGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-medium, 1rem);
+  justify-content: flex-start;
+  margin-top: auto;
+}
+
+.actionLinkWrapper {
+  display: block;
+  text-decoration: none;
+}
+
+@media (min-width: 768px) {
+  .contentLayoutGrid {
+    grid-template-columns: 2fr 1fr;
+  }
+
+  .detailsItemsGrid {
+    grid-template-columns: 1fr;
+  }
+  .organizerToolsCard {
+    padding: 1rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .organizerToolsCard {
+    padding: 1.2rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .organizerToolsCard {
+    padding: 1.5rem;
+  }
+}

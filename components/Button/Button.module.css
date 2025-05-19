@@ -1,0 +1,57 @@
+/* components/Button/Button.module.css */
+
+.button {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none !important;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  opacity: 1;
+  text-align: center;
+  white-space: nowrap;
+  transform: scale(1);
+  color: inherit;
+}
+
+.button:hover {
+  transform: scale(1.03);
+  text-decoration: none !important;
+}
+
+.primary {
+  background-color: var(--accent-primary, #da727e);
+  color: var(--button-text, #ffffff);
+  border-color: var(--accent-primary, #da727e);
+}
+
+.primary:hover {
+  color: var(--button-text, #ffffff);
+}
+
+.secondary {
+  background-color: transparent;
+  color: var(--accent-primary, #da727e);
+  border: 1px solid var(--accent-primary, #da727e);
+}
+
+.secondary:hover {
+  color: var(--accent-primary, #da727e);
+}
+
+@media (min-width: 480px) {
+  .button {
+    padding: 0.7rem 1.5rem;
+    font-size: 0.95rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .button {
+    padding: 0.9rem 2rem;
+    font-size: 1rem;
+  }
+}

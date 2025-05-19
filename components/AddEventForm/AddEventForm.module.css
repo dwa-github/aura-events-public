@@ -1,0 +1,170 @@
+/* components/AddEventForm/AddEventForm.module.css */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.formGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem 1.5rem;
+}
+
+.imagePreviewContainer {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.imagePreview {
+  max-width: 100%;
+  max-height: 200px;
+  border: 1px solid var(--border-color-light);
+  border-radius: var(--border-radius-medium);
+  object-fit: contain;
+}
+.inputHint {
+  display: block;
+  font-size: var(--font-size-xs);
+  color: var(--text-secondary);
+  font-weight: normal;
+  margin-top: 0.25rem;
+}
+@media (min-width: 600px) {
+  .formGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.fullWidth {
+  grid-column: 1 / -1;
+}
+.label {
+  font-weight: var(--font-weight-medium);
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+}
+
+.input,
+.select,
+.textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-medium);
+  background-color: var(--background-secondary);
+  color: var(--text-primary);
+  font-size: var(--font-size-base);
+  transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.input:focus,
+.select:focus,
+.textarea:focus {
+  outline: none;
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 2px var(--accent-primary-transparent);
+}
+.inputError,
+.select.inputError,
+.textarea.inputError {
+  border-color: var(--error-color);
+}
+.inputError:focus,
+.select.inputError:focus,
+.textarea.inputError:focus {
+  box-shadow: 0 0 0 2px var(--error-color-transparent);
+}
+.textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.errorMessage {
+  color: var(--error-color);
+  font-size: var(--font-size-xs);
+  margin-top: 0.25rem;
+}
+
+.formActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 1rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-color-light);
+}
+.selectedArtistsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 10px;
+  padding: 8px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-medium);
+  min-height: 40px;
+  background-color: var(--background-secondary);
+}
+.selectedArtistTag {
+  background-color: var(--accent-primary-muted);
+  color: var(--accent-primary-dark);
+  padding: 6px 12px;
+  border-radius: var(--border-radius-large);
+  font-size: var(--font-size-sm);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  transition: background-color 0.2s ease-in-out;
+}
+.selectedArtistTag:hover {
+  background-color: var(--accent-primary-hover);
+}
+.availableArtistsList {
+  max-height: 150px;
+  overflow-y: auto;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-medium);
+  padding: 8px;
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  background-color: var(--background-primary);
+}
+.artistSelectItem {
+  width: 100%;
+  padding: 0.6rem 1rem;
+  border: 1px solid var(--border-color-light);
+  background-color: var(--background-secondary);
+  color: var(--text-primary);
+  cursor: pointer;
+  text-align: left;
+  border-radius: var(--border-radius-small);
+  transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+}
+.artistSelectItem:hover:not(:disabled) {
+  background-color: var(--background-tertiary);
+  border-color: var(--border-color);
+}
+.artistSelectItem.artistSelected {
+  background-color: var(--accent-primary-transparent);
+  border-color: var(--accent-primary);
+  font-weight: var(--font-weight-semibold);
+  color: var(--accent-primary-dark);
+}
+.artistSelectItem:disabled {
+  background-color: var(--background-disabled);
+  color: var(--text-disabled);
+  cursor: not-allowed;
+  border-color: var(--border-color-disabled);
+}
+.placeholderText {
+  color: var(--text-placeholder);
+  font-style: italic;
+  padding: 10px;
+  text-align: center;
+  font-size: var(--font-size-sm);
+}

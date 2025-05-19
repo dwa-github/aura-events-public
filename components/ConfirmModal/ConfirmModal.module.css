@@ -1,0 +1,51 @@
+/* components/ConfirmModal/ConfirmModal.module.css */
+.modalBackdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modalContent {
+  background-color: var(--background-primary, #fff);
+  padding: var(--spacing-large, 2rem);
+  border-radius: var(--border-radius-medium, 8px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  width: 90%;
+  max-width: 450px;
+  color: var(--text-primary);
+  text-align: center;
+}
+
+.modalContent h3 {
+  margin-top: 0;
+  margin-bottom: var(--spacing-medium, 1.5rem);
+  font-size: var(--font-size-large, 1.5rem);
+}
+
+.modalContent p {
+  margin-bottom: var(--spacing-xl, 2.5rem);
+  line-height: 1.6;
+}
+
+.modalActions {
+  display: flex;
+  justify-content: space-around;
+  gap: var(--spacing-medium, 1rem);
+}
+
+.actionButton {
+  flex-grow: 1;
+}
+
+@media (max-width: 600px) {
+  .modalContent {
+    padding: var(--spacing-medium, 1.5rem);
+  }
+}

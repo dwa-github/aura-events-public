@@ -1,0 +1,30 @@
+/* app/events/countries/page.module.css */
+.container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.title {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+.loadingMessage,
+.errorMessage,
+.noItemsMessage {
+  text-align: center;
+  font-size: 1.1rem;
+  color: var(--text-color-secondary);
+  padding: var(--spacing-large) 0;
+}
+
+.errorMessage {
+  color: var(--color-error);
+}

@@ -1,0 +1,99 @@
+/* components/OverviewSection/OverviewSection.module.css */
+
+.overviewSection {
+  width: 100%;
+  max-width: 100%;
+  padding: var(--spacing-small, 0.5rem);
+  margin-bottom: var(--spacing-large, 2.5rem);
+  box-sizing: border-box;
+  background-color: var(--background-secondary);
+}
+
+.sectionTitle {
+  font-size: 1.8rem;
+  margin-top: 0;
+  margin-bottom: var(--spacing-medium, 1.5rem);
+  color: var(--text-primary, #212529);
+  border-bottom: 1px solid var(--border-color-subtle, #dee2e6);
+  padding-bottom: var(--spacing-small, 0.5rem);
+}
+
+.cardsContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-large, 2rem);
+}
+
+.overviewCard {
+  background-color: var(--background-primary, #ffffff);
+  border-radius: var(--border-radius-medium, 6px);
+  padding: var(--spacing-medium, 1.5rem);
+  box-shadow: var(--shadow-low, 0 1px 3px rgba(0, 0, 0, 0.1));
+}
+
+.cardTitle {
+  font-size: 1.2rem;
+  margin-top: 0;
+  margin-bottom: var(--spacing-small, 0.75rem);
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--border-color-subtle, #dee2e6);
+  padding-bottom: var(--spacing-xsmall, 0.4rem);
+}
+
+.cardList {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 var(--spacing-small, 0.5rem) 0;
+}
+
+.cardList li {
+  margin-bottom: var(--spacing-xsmall, 0.3rem);
+}
+
+.cardList li a {
+  color: var(--text-link, #007bff);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.cardList li a:hover {
+  color: var(--text-link-hover, #0056b3);
+  text-decoration: underline;
+}
+
+.viewAllLink {
+  display: inline-block;
+  margin-top: var(--spacing-small, 0.5rem);
+  font-size: 0.9rem;
+  color: var(--text-link, #007bff);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.viewAllLink:hover {
+  color: var(--text-link-hover, #0056b3);
+  text-decoration: underline;
+}
+
+@media (min-width: 768px) {
+  .overviewSection {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1rem;
+    border-radius: 1rem;
+    margin-bottom: var(--spacing-large, 3rem);
+  }
+}
+
+@media (min-width: 992px) {
+  .overviewSection {
+    margin-bottom: var(--spacing-large, 3.5rem);
+  }
+}
+
+@media (min-width: 1200px) {
+  .overviewSection {
+    margin-bottom: var(--spacing-large, 4rem);
+  }
+}

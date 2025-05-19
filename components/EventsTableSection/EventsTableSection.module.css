@@ -1,0 +1,178 @@
+/* /components/EventsTableSection/EventsTableSection.module.css */
+.eventsTableContainer {
+  width: 100%;
+  max-width: 100%;
+  padding: var(--spacing-small, 0.5rem);
+  margin-bottom: var(--spacing-large, 2.5rem);
+  box-sizing: border-box;
+  background-color: var(--background-secondary, #f8f4f0);
+}
+
+.tableHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-medium, 1rem) 0;
+}
+
+.sectionTitle {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: var(--font-weight-semibold, 600);
+  color: var(--text-primary, #455c7b);
+  line-height: 1.2;
+}
+
+.tableHeader > button,
+.tableHeader > a {
+  padding: 0.3rem 0.65rem;
+  font-size: 0.75rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.tableWrapper {
+  overflow-x: auto;
+  background-color: var(--background-primary, #fdfbf9);
+  border-radius: var(--border-radius-medium, 6px);
+  box-shadow: var(--shadow-low, 0 1px 3px rgba(0, 0, 0, 0.1));
+}
+
+.eventsTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  color: var(--text-primary, #455c7b);
+}
+
+.eventsTable th,
+.eventsTable td {
+  padding: var(--spacing-small, 0.75rem) var(--spacing-medium, 1rem);
+  &:nth-child(2),
+  &:nth-child(3) {
+    display: none;
+  }
+  text-align: left;
+  border-bottom: 1px solid var(--border-color-lighter, #eeeeee);
+  vertical-align: middle;
+  line-height: 1.5;
+  transition: background-color 0.1s ease-in-out, color 0.2s ease-in-out;
+}
+
+.eventsTable th {
+  font-weight: 600;
+  color: var(--accent-primary, #da727e);
+  padding-top: var(--spacing-small, 0.75rem);
+  padding-bottom: var(--spacing-small, 0.75rem);
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+}
+
+.eventsTable tr:last-child td {
+  border-bottom: none;
+}
+
+.tableRow {
+  cursor: pointer;
+}
+
+.tableRow:hover td {
+  background-color: var(--background-secondary, #f8f4f0);
+  color: var(--accent-primary, #da727e);
+}
+
+.titleCell {
+  color: var(--text-primary, #455c7b);
+  font-weight: 500;
+  transition: color 0.2s ease-in-out;
+  max-width: 150px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.tableRow:hover .titleCell {
+  color: var(--accent-primary, #da727e);
+}
+
+.actionsHeader {
+  text-align: right;
+  padding-right: var(--spacing-large, 1.5rem);
+}
+
+.actionsCell {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: var(--spacing-xsmall, 0.5rem);
+  padding-right: var(--spacing-large, 1.5rem);
+  text-align: right;
+  white-space: nowrap;
+}
+
+.actionsCell > button:last-child,
+.actionsCell > a:last-child {
+  margin-left: auto;
+}
+.actionsCell > button,
+.actionsCell > a {
+  padding: var(--spacing-xsmall, 0.35rem) var(--spacing-small, 0.6rem);
+  font-size: 0.85rem;
+  position: relative;
+  z-index: 2;
+}
+
+.noEventsCell {
+  text-align: center;
+  padding: var(--spacing-large, 1.5rem) var(--spacing-medium, 1rem);
+  color: var(--text-secondary, #685c79);
+  font-style: italic;
+  cursor: default;
+  background-color: var(--background-primary, #fdfbf9) !important;
+}
+
+.loadMoreContainer {
+  display: flex;
+  justify-content: center;
+  padding: var(--spacing-medium, 1rem) 0;
+}
+
+@media (min-width: 768px) {
+  .eventsTableContainer {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1rem;
+    border-radius: 1rem;
+    margin-bottom: var(--spacing-large, 3rem);
+  }
+  .sectionTitle {
+    padding-left: 0;
+  }
+
+  .eventsTable th,
+  .eventsTable td {
+    &:nth-child(2),
+    &:nth-child(3) {
+      display: table-cell;
+    }
+  }
+  .titleCell {
+    max-width: none;
+  }
+}
+
+@media (min-width: 992px) {
+  .eventsTableContainer {
+    margin-bottom: var(--spacing-large, 3.5rem);
+  }
+}
+
+@media (min-width: 1200px) {
+  .eventsTableContainer {
+    margin-bottom: var(--spacing-large, 4rem);
+  }
+}

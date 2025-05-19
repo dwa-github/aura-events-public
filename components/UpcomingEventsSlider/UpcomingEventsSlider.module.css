@@ -1,0 +1,206 @@
+/* components/UpcomingEventsSlider/UpcomingEventsSlider.module.css */
+
+.sectionContainer {
+  position: relative;
+  width: 100%;
+  background-color: var(--background-secondary);
+  padding: 1rem;
+  margin: 0;
+  margin-bottom: 2rem;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto 1rem auto;
+  padding: 0 1rem;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+  text-align: left;
+  flex-grow: 1;
+}
+
+.navButton {
+  background-color: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0.25rem;
+  flex-shrink: 0;
+  color: var(--text-secondary);
+  transition: color 0.3s ease;
+}
+
+.navButton.swiper-button-disabled {
+  color: var(--text-disabled);
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.navButton:not(.swiper-button-disabled):hover {
+  color: var(--accent-primary);
+}
+
+.sliderWrapper {
+  position: relative;
+  padding: 0.5rem 0;
+  margin: 0 auto;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.swiperContainer {
+  width: 100%;
+  overflow: visible !important;
+  box-sizing: border-box;
+}
+
+.swiperSlide {
+  width: 75vw;
+  max-width: 400px;
+  height: auto;
+  transform: scale(0.9);
+  transition: transform 0.4s ease;
+  box-sizing: border-box;
+}
+
+.swiperSlide.swiper-slide-active {
+  transform: scale(1);
+}
+
+.swiperSlide > * {
+  height: 100%;
+  display: block;
+}
+
+.navIcon {
+  width: 1rem;
+  height: 1rem;
+  display: block;
+  stroke-width: 2;
+}
+
+.controlsWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.paginationContainer {
+  text-align: center;
+  max-width: 200px;
+  flex-grow: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.paginationBullet {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background-color: var(--text-secondary);
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: background-color 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+}
+
+.paginationBullet:global(.swiper-pagination-bullet-active) {
+  background: var(--accent-primary) !important;
+  opacity: 1;
+}
+
+@media (min-width: 768px) {
+  .sectionContainer {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1rem;
+    margin-bottom: 3rem;
+    border-radius: 1rem;
+  }
+
+  .sectionHeader {
+    padding: 0 1rem;
+  }
+
+  .title {
+    font-size: 2.1rem;
+  }
+
+  .swiperSlide {
+    width: 480px;
+    max-width: 480px;
+  }
+
+  .navIcon {
+    width: 1.2rem;
+    height: 1.2rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .sectionContainer {
+    padding: 1.2rem;
+  }
+  .sectionHeader {
+    padding: 0 1.2rem;
+  }
+
+  .title {
+    font-size: 2.4rem;
+  }
+
+  .swiperSlide {
+    width: 480px;
+    max-width: 480px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .sectionContainer {
+    padding: 1.5rem;
+    margin-bottom: 4rem;
+  }
+  .sectionHeader {
+    padding: 0 1.5rem;
+  }
+
+  .title {
+    font-size: 2.6rem;
+  }
+
+  .swiperSlide {
+    width: 500px;
+    max-width: 500px;
+  }
+}
+
+.loadingMessage,
+.noEventsMessage {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--text-secondary);
+  font-style: italic;
+  width: 100%;
+}
